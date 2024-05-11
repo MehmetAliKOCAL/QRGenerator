@@ -12,6 +12,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'AHNI QR Generator',
+      link: [{ rel: 'icon', type: 'image/png', href: '/logo.png' }],
       meta: [
         {
           name: 'description',
@@ -24,7 +25,10 @@ export default defineNuxtConfig({
           property: 'og:description',
           content: 'QR code generator app made for the TUBITAK competition.',
         },
-        { property: 'og:image', content: '' },
+        {
+          property: 'og:image',
+          content: 'https://ahni-qrgenerator.vercel.app/logo.png',
+        },
         { property: 'twitter:card', content: 'summary_large_image' },
         { property: 'twitter:domain', content: 'ahni-qrgenerator.vercel.app' },
         {
@@ -36,7 +40,10 @@ export default defineNuxtConfig({
           property: 'twitter:description',
           content: 'QR code generator app made for the TUBITAK competition.',
         },
-        { property: 'twitter:image', content: '' },
+        {
+          property: 'twitter:image',
+          content: 'https://ahni-qrgenerator.vercel.app/logo.png',
+        },
       ],
     },
   },
