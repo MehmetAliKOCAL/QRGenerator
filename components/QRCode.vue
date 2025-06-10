@@ -7,42 +7,42 @@
 </template>
 
 <script setup lang="ts">
-import QRCodeStyling, { type FileExtension } from 'qr-code-styling';
+import QRCodeStyling, { type FileExtension } from "qr-code-styling";
 
 const props = defineProps({
   options: {
     type: Object,
     default: {
-      data: 'https://ahni-qrgenerator.vercel.app/' as string,
+      data: "https://qrgen.gwyndev.com/" as string,
       width: 300,
       height: 300,
-      image: '',
+      image: "",
       margin: 0,
-      type: 'png',
-      dotsOptions: { color: '#000000', type: 'rounded' },
-      backgroundOptions: { color: '#ffffff' },
-      cornersSquareOptions: { color: '#000000', type: '' },
-      cornersDotOptions: { color: '#000000', type: '' },
+      type: "png",
+      dotsOptions: { color: "#000000", type: "rounded" },
+      backgroundOptions: { color: "#ffffff" },
+      cornersSquareOptions: { color: "#000000", type: "" },
+      cornersDotOptions: { color: "#000000", type: "" },
       imageOptions: {
-        crossOrigin: 'anonymous',
+        crossOrigin: "anonymous",
         margin: 20,
         imageSize: 0.4,
         hideBackgroundDots: true,
       },
       qrOptions: {
         typeNumber: 0,
-        mode: 'Byte',
-        errorCorrectionLevel: 'Q',
+        mode: "Byte",
+        errorCorrectionLevel: "Q",
       },
     },
   },
   fileName: {
     type: String,
-    default: 'AHNI QR Generator',
+    default: "QR Generator",
   },
   fileExt: {
     type: String,
-    default: 'png',
+    default: "png",
   },
 });
 
@@ -54,7 +54,7 @@ onMounted(() => {
   qrCodeStyling.append(qrCode.value);
   if (qrCode.value!.firstChild instanceof HTMLElement) {
     qrCode.value?.firstChild?.setAttribute(
-      'viewBox',
+      "viewBox",
       `0 0 ${props.options.width} ${props.options.height}`
     );
   }
@@ -64,7 +64,7 @@ watch(props, () => {
   qrCodeStyling.update(props.options);
   if (qrCode.value?.firstChild instanceof HTMLElement) {
     qrCode.value?.firstChild?.setAttribute(
-      'viewBox',
+      "viewBox",
       `0 0 ${props.options.width} ${props.options.height}`
     );
   }

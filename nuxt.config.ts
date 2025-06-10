@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  css: ['~/assets/css/main.css'],
+  css: ["~/assets/css/main.css"],
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -11,38 +11,38 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'AHNI QR Generator',
-      link: [{ rel: 'icon', type: 'image/png', href: '/logo.png' }],
+      title: "QR Generator",
+      link: [{ rel: "icon", type: "image/png", href: "/logo.png" }],
       meta: [
         {
-          name: 'description',
-          content: 'QR code generator app made for the TUBITAK competition.',
+          name: "description",
+          content: "QR code generator app made for the TUBITAK competition.",
         },
-        { property: 'og:url', content: 'https://ahni-qrgenerator.vercel.app' },
-        { property: 'og:type', content: 'website' },
-        { property: 'og:title', content: 'AHNI QR Generator' },
+        { property: "og:url", content: "https://qrgen.gwyndev.com" },
+        { property: "og:type", content: "website" },
+        { property: "og:title", content: "QR Generator" },
         {
-          property: 'og:description',
-          content: 'QR code generator app made for the TUBITAK competition.',
-        },
-        {
-          property: 'og:image',
-          content: 'https://ahni-qrgenerator.vercel.app/logo.png',
-        },
-        { property: 'twitter:card', content: 'summary_large_image' },
-        { property: 'twitter:domain', content: 'ahni-qrgenerator.vercel.app' },
-        {
-          property: 'twitter:url',
-          content: 'https://ahni-qrgenerator.vercel.app',
-        },
-        { property: 'twitter:title', content: 'AHNI QR Generator' },
-        {
-          property: 'twitter:description',
-          content: 'QR code generator app made for the TUBITAK competition.',
+          property: "og:description",
+          content: "A customizable QR code generator app.",
         },
         {
-          property: 'twitter:image',
-          content: 'https://ahni-qrgenerator.vercel.app/logo.png',
+          property: "og:image",
+          content: "https://qrgen.gwyndev.com/logo.png",
+        },
+        { property: "twitter:card", content: "summary_large_image" },
+        { property: "twitter:domain", content: "qrgen.gwyndev.com" },
+        {
+          property: "twitter:url",
+          content: "https://qrgen.gwyndev.com",
+        },
+        { property: "twitter:title", content: "QR Generator" },
+        {
+          property: "twitter:description",
+          content: "A customizable QR code generator app.",
+        },
+        {
+          property: "twitter:image",
+          content: "https://qrgen.gwyndev.com/logo.png",
         },
       ],
     },

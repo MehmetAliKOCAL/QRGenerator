@@ -195,23 +195,23 @@
 </template>
 
 <script setup lang="ts">
-import QRCode from '@/components/QRCode.vue';
+import QRCode from "@/components/QRCode.vue";
 
 const qrImage = ref(null);
-const fileExt = ref('png');
-const fileName = ref('AHNI QR Generator');
+const fileExt = ref("png");
+const fileName = ref("QR Generator");
 const qrCode = ref(null as any as typeof QRCode);
 const qrOptions = reactive({
-  data: 'https://ahni-qrgenerator.vercel.app/',
+  data: "https://qrgen.gwyndev.com/",
   width: 300,
   height: 300,
   margin: 0,
-  image: '',
-  type: 'png',
-  dotsOptions: { color: '#000000', type: 'rounded' },
-  backgroundOptions: { color: '#ffffff' },
-  cornersSquareOptions: { color: '#000000', type: '' },
-  cornersDotOptions: { color: '#000000', type: '' },
+  image: "",
+  type: "png",
+  dotsOptions: { color: "#000000", type: "rounded" },
+  backgroundOptions: { color: "#ffffff" },
+  cornersSquareOptions: { color: "#000000", type: "" },
+  cornersDotOptions: { color: "#000000", type: "" },
 });
 
 function downloadQRCode() {
@@ -227,7 +227,7 @@ function updateQRImage(event: Event): void {
   const file = (event.target as HTMLInputElement).files?.[0];
   const reader = new FileReader();
   reader.addEventListener(
-    'load',
+    "load",
     () => {
       qrOptions.image = reader?.result as string;
     },
@@ -237,7 +237,7 @@ function updateQRImage(event: Event): void {
 }
 
 function clearQRImage() {
-  qrOptions.image = '';
-  if (qrImage.value) (qrImage.value as HTMLInputElement).value = '';
+  qrOptions.image = "";
+  if (qrImage.value) (qrImage.value as HTMLInputElement).value = "";
 }
 </script>

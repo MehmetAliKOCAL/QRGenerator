@@ -1,6 +1,6 @@
 # Nuxt 3 QR Generator
 
-A customizable QR code generator using [oblakstudio/qr-code-styling](https://github.com/oblakstudio/qr-code-styling). [Click here for the live preview](https://ahni-qrgenerator.vercel.app).
+A customizable QR code generator using [oblakstudio/qr-code-styling](https://github.com/oblakstudio/qr-code-styling). [Click here for the live preview](https://qrgen.gwyndev.com).
 Made with Nuxt 3 and Tailwind CSS, deployed on Vercel.
 
 ## Setup
