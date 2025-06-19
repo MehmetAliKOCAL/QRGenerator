@@ -22,7 +22,8 @@
           />
         </div>
         <div class="mt-1 text-xs text-gray-700">
-          * Type the link or text that you want to display inside the qr code
+          * Type the link or text that you want to display when the qr code is
+          scanned
         </div>
       </div>
       <div class="mt-4">
