@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center">
     <div class="max-w-[600px] max-h-[600px] overflow-hidden shadow-md border-2">
-      <div ref="qrCode" class=""></div>
+      <div ref="qrElement" class=""></div>
     </div>
   </div>
 </template>
@@ -46,40 +46,36 @@ const props = defineProps({
   },
 });
 
-const { $qrCodeStyling } = useNuxtApp();
-const qrCodeStyling: QRCodeStyling = $qrCodeStyling(props.options);
-const qrCode = ref<HTMLElement | undefined>(undefined);
+const qrObject = new QRCodeStyling(props.options);
+const qrElement = ref<HTMLElement>();
 
-onMounted(() => {
-  qrCodeStyling.append(qrCode.value);
-  if (qrCode.value!.firstChild instanceof HTMLElement) {
-    qrCode.value?.firstChild?.setAttribute(
+function setQRDimensions() {
+  if (qrElement.value?.firstChild instanceof HTMLElement) {
+    qrElement.value?.firstChild?.setAttribute(
       "viewBox",
       `0 0 ${props.options.width} ${props.options.height}`
     );
   }
+}
+onMounted(() => {
+  qrObject.append(qrElement.value);
+  setQRDimensions();
 });
 
 watch(props, () => {
-  qrCodeStyling.update(props.options);
-  if (qrCode.value?.firstChild instanceof HTMLElement) {
-    qrCode.value?.firstChild?.setAttribute(
-      "viewBox",
-      `0 0 ${props.options.width} ${props.options.height}`
-    );
-  }
+  qrObject.update(props.options);
+  setQRDimensions();
 });
 
 function download() {
-  qrCodeStyling.download({
+  const updatedQR = new QRCodeStyling(props.options);
+  updatedQR.download({
     name: props.fileName,
     extension: props.fileExt as FileExtension,
   });
 }
 
-defineExpose({
-  download,
-});
+defineExpose({ download });
 </script>
 
 <style scoped>
